@@ -1,0 +1,126 @@
+[gd_scene load_steps=6 format=3 uid="uid://bouhb5c10x0ep"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_811ug"]
+[ext_resource type="PackedScene" uid="uid://c8gcvqxg48buj" path="res://board.tscn" id="1_hp8kv"]
+[ext_resource type="PackedScene" uid="uid://bapgkit1kjgvu" path="res://cell_border.tscn" id="2_401vd"]
+[ext_resource type="PackedScene" uid="uid://bc2vx6d0orw0g" path="res://circle.tscn" id="2_oqlvk"]
+[ext_resource type="PackedScene" uid="uid://dfb84kq0dignh" path="res://cross.tscn" id="3_jikov"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_811ug")
+circle_scene = ExtResource("2_oqlvk")
+cross_scene = ExtResource("3_jikov")
+
+[node name="Board_0_0" parent="." instance=ExtResource("1_hp8kv")]
+position = Vector2(150, 150)
+scale = Vector2(0.5, 0.5)
+
+[node name="Control" parent="Board_0_0" instance=ExtResource("2_401vd")]
+offset_left = -300.0
+offset_top = -300.0
+offset_right = -300.0
+offset_bottom = -300.0
+show_bottom = true
+show_right = true
+
+[node name="Board_0_1" parent="." instance=ExtResource("1_hp8kv")]
+position = Vector2(450, 150)
+scale = Vector2(0.5, 0.5)
+
+[node name="Control" parent="Board_0_1" instance=ExtResource("2_401vd")]
+offset_left = -300.0
+offset_top = -300.0
+offset_right = -300.0
+offset_bottom = -300.0
+show_bottom = true
+show_left = true
+show_right = true
+
+[node name="Board_0_2" parent="." instance=ExtResource("1_hp8kv")]
+position = Vector2(750, 150)
+scale = Vector2(0.5, 0.5)
+
+[node name="Control" parent="Board_0_2" instance=ExtResource("2_401vd")]
+offset_left = -300.0
+offset_top = -300.0
+offset_right = -300.0
+offset_bottom = -300.0
+show_bottom = true
+show_left = true
+
+[node name="Board_1_0" parent="." instance=ExtResource("1_hp8kv")]
+position = Vector2(150, 450)
+scale = Vector2(0.5, 0.5)
+
+[node name="Control" parent="Board_1_0" instance=ExtResource("2_401vd")]
+offset_left = -300.0
+offset_top = -300.0
+offset_right = -300.0
+offset_bottom = -300.0
+show_top = true
+show_bottom = true
+show_right = true
+
+[node name="Board_1_1" parent="." instance=ExtResource("1_hp8kv")]
+position = Vector2(450, 450)
+scale = Vector2(0.5, 0.5)
+
+[node name="Control" parent="Board_1_1" instance=ExtResource("2_401vd")]
+offset_left = -300.0
+offset_top = -300.0
+offset_right = -300.0
+offset_bottom = -300.0
+show_top = true
+show_bottom = true
+show_left = true
+show_right = true
+
+[node name="Board_1_2" parent="." instance=ExtResource("1_hp8kv")]
+position = Vector2(750, 450)
+scale = Vector2(0.5, 0.5)
+
+[node name="Control" parent="Board_1_2" instance=ExtResource("2_401vd")]
+offset_left = -300.0
+offset_top = -300.0
+offset_right = -300.0
+offset_bottom = -300.0
+show_top = true
+show_bottom = true
+show_left = true
+
+[node name="Board_2_0" parent="." instance=ExtResource("1_hp8kv")]
+position = Vector2(150, 750)
+scale = Vector2(0.5, 0.5)
+
+[node name="Control" parent="Board_2_0" instance=ExtResource("2_401vd")]
+offset_left = -300.0
+offset_top = -300.0
+offset_right = -300.0
+offset_bottom = -300.0
+show_top = true
+show_right = true
+
+[node name="Board_2_1" parent="." instance=ExtResource("1_hp8kv")]
+position = Vector2(450, 750)
+scale = Vector2(0.5, 0.5)
+
+[node name="Control" parent="Board_2_1" instance=ExtResource("2_401vd")]
+offset_left = -300.0
+offset_top = -300.0
+offset_right = -300.0
+offset_bottom = -300.0
+show_top = true
+show_left = true
+show_right = true
+
+[node name="Board_2_2" parent="." instance=ExtResource("1_hp8kv")]
+position = Vector2(750, 750)
+scale = Vector2(0.5, 0.5)
+
+[node name="Control" parent="Board_2_2" instance=ExtResource("2_401vd")]
+offset_left = -300.0
+offset_top = -300.0
+offset_right = -300.0
+offset_bottom = -300.0
+show_top = true
+show_left = true

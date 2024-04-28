@@ -1,0 +1,254 @@
+[gd_scene load_steps=12 format=3 uid="uid://bouhb5c10x0ep"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_811ug"]
+[ext_resource type="PackedScene" uid="uid://c8gcvqxg48buj" path="res://board.tscn" id="1_hp8kv"]
+[ext_resource type="PackedScene" uid="uid://bc2vx6d0orw0g" path="res://circle.tscn" id="2_oqlvk"]
+[ext_resource type="PackedScene" uid="uid://dfb84kq0dignh" path="res://cross.tscn" id="3_jikov"]
+[ext_resource type="PackedScene" uid="uid://rtittoiwluex" path="res://game_over_menu.tscn" id="6_t3jbd"]
+[ext_resource type="PackedScene" uid="uid://dqvuj160i4a2v" path="res://regras.tscn" id="7_d2vem"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7rdyl"]
+bg_color = Color(0.0941176, 0.447059, 0.768627, 1)
+border_width_left = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uyqmg"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0.960784, 0.419608, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ffilr"]
+bg_color = Color(0, 0, 0, 0.745098)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0.909804, 0.933333, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="Theme" id="Theme_q0uxp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ntq7"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Main" type="Node"]
+script = ExtResource("1_811ug")
+circle_scene = ExtResource("2_oqlvk")
+cross_scene = ExtResource("3_jikov")
+
+[node name="Board_0_0" parent="." instance=ExtResource("1_hp8kv")]
+scale = Vector2(0.5, 0.5)
+circle_scene = ExtResource("2_oqlvk")
+cross_scene = ExtResource("3_jikov")
+show_bottom = true
+show_right = true
+
+[node name="Board_1_0" parent="." instance=ExtResource("1_hp8kv")]
+position = Vector2(300, 0)
+scale = Vector2(0.5, 0.5)
+circle_scene = ExtResource("2_oqlvk")
+cross_scene = ExtResource("3_jikov")
+show_bottom = true
+show_left = true
+show_right = true
+
+[node name="Board_2_0" parent="." instance=ExtResource("1_hp8kv")]
+position = Vector2(600, 0)
+scale = Vector2(0.5, 0.5)
+circle_scene = ExtResource("2_oqlvk")
+cross_scene = ExtResource("3_jikov")
+show_bottom = true
+show_left = true
+
+[node name="Board_0_1" parent="." instance=ExtResource("1_hp8kv")]
+position = Vector2(0, 300)
+scale = Vector2(0.5, 0.5)
+circle_scene = ExtResource("2_oqlvk")
+cross_scene = ExtResource("3_jikov")
+show_top = true
+show_bottom = true
+show_right = true
+
+[node name="Board_1_1" parent="." instance=ExtResource("1_hp8kv")]
+position = Vector2(300, 300)
+scale = Vector2(0.5, 0.5)
+circle_scene = ExtResource("2_oqlvk")
+cross_scene = ExtResource("3_jikov")
+show_top = true
+show_bottom = true
+show_left = true
+show_right = true
+
+[node name="Board_2_1" parent="." instance=ExtResource("1_hp8kv")]
+position = Vector2(600, 300)
+scale = Vector2(0.5, 0.5)
+circle_scene = ExtResource("2_oqlvk")
+cross_scene = ExtResource("3_jikov")
+show_top = true
+show_bottom = true
+show_left = true
+
+[node name="Board_0_2" parent="." instance=ExtResource("1_hp8kv")]
+position = Vector2(0, 600)
+scale = Vector2(0.5, 0.5)
+circle_scene = ExtResource("2_oqlvk")
+cross_scene = ExtResource("3_jikov")
+show_top = true
+show_right = true
+
+[node name="Board_1_2" parent="." instance=ExtResource("1_hp8kv")]
+position = Vector2(300, 600)
+scale = Vector2(0.5, 0.5)
+circle_scene = ExtResource("2_oqlvk")
+cross_scene = ExtResource("3_jikov")
+show_top = true
+show_left = true
+show_right = true
+
+[node name="Board_2_2" parent="." instance=ExtResource("1_hp8kv")]
+position = Vector2(600, 600)
+scale = Vector2(0.5, 0.5)
+circle_scene = ExtResource("2_oqlvk")
+cross_scene = ExtResource("3_jikov")
+show_top = true
+show_left = true
+
+[node name="InfoPanel" type="Panel" parent="."]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -300.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7rdyl")
+
+[node name="MarginInfo" type="MarginContainer" parent="InfoPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VFlowContainer" type="VFlowContainer" parent="InfoPanel/MarginInfo"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="InfoPanel/MarginInfo/VFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_uyqmg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ffilr")
+text = "REGRAS"
+
+[node name="Spacer" type="Control" parent="InfoPanel/MarginInfo/VFlowContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PlayerLabel" type="Label" parent="InfoPanel/MarginInfo/VFlowContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Próximo Jogador:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerPanel" type="Panel" parent="InfoPanel/MarginInfo/VFlowContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_q0uxp")
+theme_override_styles/panel = SubResource("StyleBoxFlat_3ntq7")
+
+[node name="Spacer2" type="Control" parent="InfoPanel/MarginInfo/VFlowContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Player1Label" type="RichTextLabel" parent="InfoPanel/MarginInfo/VFlowContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[center]Vitórias [color=green]O[/color]:[/center]"
+fit_content = true
+scroll_active = false
+
+[node name="Player1ScoreLabel" type="Label" parent="InfoPanel/MarginInfo/VFlowContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player2Label" type="RichTextLabel" parent="InfoPanel/MarginInfo/VFlowContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[center]Vitórias [color=red]X[/color]:[/center]"
+fit_content = true
+scroll_active = false
+
+[node name="Player2ScoreLabel" type="Label" parent="InfoPanel/MarginInfo/VFlowContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DrawLabel" type="Label" parent="InfoPanel/MarginInfo/VFlowContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Empates:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DrawScoreLabel" type="Label" parent="InfoPanel/MarginInfo/VFlowContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOverMenu" parent="." instance=ExtResource("6_t3jbd")]
+process_mode = 2
+visible = false
+
+[node name="RegrasWindow" parent="." instance=ExtResource("7_d2vem")]
+visible = false
+
+[connection signal="pressed" from="InfoPanel/MarginInfo/VFlowContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="restart" from="GameOverMenu" to="." method="_on_game_over_menu_restart"]
+[connection signal="close_requested" from="RegrasWindow" to="." method="_on_regras_window_close_requested"]

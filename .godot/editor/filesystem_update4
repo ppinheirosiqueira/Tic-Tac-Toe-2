@@ -1,0 +1,9 @@
+res://cross.tscn
+res://board.tscn
+res://board.gd
+res://main.tscn
+res://circle.tscn
+res://main.gd
+res://cell_border.tscn
+res://regras.tscn
+res://RichTextLabel.gd
