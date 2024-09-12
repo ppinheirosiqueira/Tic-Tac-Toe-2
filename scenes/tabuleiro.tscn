@@ -1,0 +1,105 @@
+[gd_scene load_steps=6 format=3 uid="uid://byvk5n7pxaoit"]
+
+[ext_resource type="Script" path="res://scripts/tabuleiro.gd" id="1_2h011"]
+[ext_resource type="PackedScene" uid="uid://e0jwl3527kcf" path="res://scenes/cell.tscn" id="1_btno1"]
+[ext_resource type="PackedScene" uid="uid://cn4lnepleltox" path="res://scenes/markers/circle.tscn" id="2_fq3f4"]
+[ext_resource type="PackedScene" uid="uid://dmctyam6teb44" path="res://scenes/borders.tscn" id="3_7lucu"]
+[ext_resource type="PackedScene" uid="uid://c7onln7jqs58j" path="res://scenes/markers/cross.tscn" id="3_vj8tw"]
+
+[node name="Tabuleiro" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 360.0
+offset_bottom = 360.0
+script = ExtResource("1_2h011")
+circle_scene = ExtResource("2_fq3f4")
+cross_scene = ExtResource("3_vj8tw")
+
+[node name="Cell_0" parent="." instance=ExtResource("1_btno1")]
+show_bottom = true
+show_right = true
+
+[node name="Cell_1" parent="." instance=ExtResource("1_btno1")]
+offset_left = 120.0
+offset_right = 240.0
+show_bottom = true
+show_left = true
+show_right = true
+
+[node name="Cell_2" parent="." instance=ExtResource("1_btno1")]
+offset_left = 240.0
+offset_right = 360.0
+show_bottom = true
+show_left = true
+
+[node name="Cell_3" parent="." instance=ExtResource("1_btno1")]
+offset_top = 120.0
+offset_bottom = 240.0
+show_top = true
+show_bottom = true
+show_right = true
+
+[node name="Cell_4" parent="." instance=ExtResource("1_btno1")]
+offset_left = 120.0
+offset_top = 120.0
+offset_right = 240.0
+offset_bottom = 240.0
+show_top = true
+show_bottom = true
+show_left = true
+show_right = true
+
+[node name="Cell_5" parent="." instance=ExtResource("1_btno1")]
+offset_left = 240.0
+offset_top = 120.0
+offset_right = 360.0
+offset_bottom = 240.0
+show_top = true
+show_bottom = true
+show_left = true
+
+[node name="Cell_6" parent="." instance=ExtResource("1_btno1")]
+offset_top = 240.0
+offset_bottom = 360.0
+show_top = true
+show_right = true
+
+[node name="Cell_7" parent="." instance=ExtResource("1_btno1")]
+offset_left = 120.0
+offset_top = 240.0
+offset_right = 240.0
+offset_bottom = 360.0
+show_top = true
+show_left = true
+show_right = true
+
+[node name="Cell_8" parent="." instance=ExtResource("1_btno1")]
+offset_left = 240.0
+offset_top = 240.0
+offset_right = 360.0
+offset_bottom = 360.0
+show_top = true
+show_left = true
+
+[node name="Borders" parent="." instance=ExtResource("3_7lucu")]
+layout_mode = 1
+
+[node name="Fundo" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[connection signal="celula_clicada" from="Cell_0" to="." method="_on_cell_0_celula_clicada"]
+[connection signal="celula_clicada" from="Cell_1" to="." method="_on_cell_1_celula_clicada"]
+[connection signal="celula_clicada" from="Cell_2" to="." method="_on_cell_2_celula_clicada"]
+[connection signal="celula_clicada" from="Cell_3" to="." method="_on_cell_3_celula_clicada"]
+[connection signal="celula_clicada" from="Cell_4" to="." method="_on_cell_4_celula_clicada"]
+[connection signal="celula_clicada" from="Cell_5" to="." method="_on_cell_5_celula_clicada"]
+[connection signal="celula_clicada" from="Cell_6" to="." method="_on_cell_6_celula_clicada"]
+[connection signal="celula_clicada" from="Cell_7" to="." method="_on_cell_7_celula_clicada"]
+[connection signal="celula_clicada" from="Cell_8" to="." method="_on_cell_8_celula_clicada"]

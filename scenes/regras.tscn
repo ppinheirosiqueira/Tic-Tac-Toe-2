@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqvuj160i4a2v"]
+[gd_scene load_steps=3 format=3 uid="uid://dqvuj160i4a2v"]
+
+[ext_resource type="Script" path="res://scripts/regras.gd" id="1_diu0g"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ftyvd"]
 bg_color = Color(0, 0, 0, 1)
@@ -9,6 +11,7 @@ title = "REGRAS"
 initial_position = 2
 size = Vector2i(500, 600)
 theme_override_font_sizes/title_font_size = 24
+script = ExtResource("1_diu0g")
 
 [node name="Panel" type="Panel" parent="."]
 anchors_preset = 15

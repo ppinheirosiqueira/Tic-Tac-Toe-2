@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://e0jwl3527kcf"]
+
+[ext_resource type="Texture2D" uid="uid://c3nqh6ps2rytg" path="res://assets/fundo.png" id="1_abyw6"]
+[ext_resource type="Script" path="res://scripts/cell.gd" id="1_ktbxl"]
+[ext_resource type="PackedScene" uid="uid://cn4lnepleltox" path="res://scenes/markers/circle.tscn" id="2_o6d41"]
+[ext_resource type="PackedScene" uid="uid://dmctyam6teb44" path="res://scenes/borders.tscn" id="3_6ilq6"]
+[ext_resource type="PackedScene" uid="uid://c7onln7jqs58j" path="res://scenes/markers/cross.tscn" id="3_y463k"]
+
+[node name="Cell" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 120.0
+offset_bottom = 120.0
+script = ExtResource("1_ktbxl")
+circle_scene = ExtResource("2_o6d41")
+cross_scene = ExtResource("3_y463k")
+
+[node name="Fundo" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_abyw6")
+
+[node name="Borders" parent="." instance=ExtResource("3_6ilq6")]
+layout_mode = 1
+
+[connection signal="pressed" from="Fundo" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Fundo" to="." method="_on_fundo_pressed"]

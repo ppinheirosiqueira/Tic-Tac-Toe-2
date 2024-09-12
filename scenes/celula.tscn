@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://i0koc3ojxukc"]
+
+[ext_resource type="Script" path="res://scripts/celula.gd" id="1_1rv5y"]
+[ext_resource type="Texture2D" uid="uid://ctku2p4gifrvs" path="res://assets/fundo.png" id="1_ccpqy"]
+[ext_resource type="PackedScene" uid="uid://bc2vx6d0orw0g" path="res://scenes/markers/circle.tscn" id="2_1keo8"]
+[ext_resource type="PackedScene" uid="uid://dfb84kq0dignh" path="res://scenes/markers/cross.tscn" id="3_jdpbf"]
+[ext_resource type="PackedScene" uid="uid://bapgkit1kjgvu" path="res://scenes/cell_border.tscn" id="3_mp5mm"]
+
+[node name="Celula" type="Control"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1080.0
+offset_bottom = -780.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1rv5y")
+circle_scene = ExtResource("2_1keo8")
+cross_scene = ExtResource("3_jdpbf")
+
+[node name="Fundo" type="Sprite2D" parent="."]
+texture = ExtResource("1_ccpqy")
+centered = false
+
+[node name="Borders" parent="." instance=ExtResource("3_mp5mm")]
+layout_mode = 1

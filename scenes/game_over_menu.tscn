@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://rtittoiwluex"]
 
-[ext_resource type="Script" path="res://game_over_menu.gd" id="1_tfuij"]
+[ext_resource type="Script" path="res://scripts/game_over_menu.gd" id="1_tfuij"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ijdig"]
 bg_color = Color(0, 0.654902, 0.862745, 1)
@@ -15,6 +15,7 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [node name="GameOverMenu" type="CanvasLayer"]
+process_mode = 2
 script = ExtResource("1_tfuij")
 
 [node name="GameOverPanel" type="Panel" parent="."]

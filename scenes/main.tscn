@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://csotjq5a4kwik"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_13tk5"]
+[ext_resource type="PackedScene" uid="uid://b63rxhble23w1" path="res://scenes/main_game.tscn" id="2_vxwsp"]
+[ext_resource type="PackedScene" uid="uid://pp7j008tvcws" path="res://scenes/new_game_menu.tscn" id="3_g7f2x"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_13tk5")
+main_game = ExtResource("2_vxwsp")
+
+[node name="NewGameMenu" parent="." instance=ExtResource("3_g7f2x")]
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[connection signal="start_game" from="NewGameMenu" to="." method="_on_new_game_menu_start_game"]
