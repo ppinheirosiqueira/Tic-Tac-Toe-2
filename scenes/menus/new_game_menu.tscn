@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://pp7j008tvcws"]
 
-[ext_resource type="Script" path="res://scripts/new_game_menu.gd" id="1_l3o1f"]
+[ext_resource type="Script" uid="uid://btqrxtkoqq56l" path="res://scripts/menus/new_game_menu.gd" id="1_l3o1f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rrkxu"]
 bg_color = Color(0.419813, 0.419813, 0.419813, 1)
@@ -31,6 +31,10 @@ resource_name = "IA2_dificuldade"
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 183.0
+offset_top = -353.0
+offset_right = 183.0
+offset_bottom = -353.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0282116, 0.257114, 0.371457, 1)
@@ -245,6 +249,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -318,6 +323,23 @@ text = "Difícil"
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="PartidaIA2Menu/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PartidaIA2Menu/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Quantidade de Partidas:"
+
+[node name="LabelNumPartidas" type="LineEdit" parent="PartidaIA2Menu/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "10"
+alignment = 2
+
+[node name="VSpace2" type="Control" parent="PartidaIA2Menu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
 [node name="StartGameIaIa" type="Button" parent="PartidaIA2Menu/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -343,4 +365,5 @@ text = "Start Game"
 [connection signal="pressed" from="PartidaIA2Menu/VBoxContainer/HBoxContainer/VBoxContainer2/IA2_1" to="." method="_on_ia_2_1_pressed"]
 [connection signal="pressed" from="PartidaIA2Menu/VBoxContainer/HBoxContainer/VBoxContainer2/IA2_2" to="." method="_on_ia_2_2_pressed"]
 [connection signal="pressed" from="PartidaIA2Menu/VBoxContainer/HBoxContainer/VBoxContainer2/IA2_3" to="." method="_on_ia_2_3_pressed"]
+[connection signal="text_changed" from="PartidaIA2Menu/VBoxContainer/HBoxContainer2/LabelNumPartidas" to="." method="_on_label_num_partidas_text_changed"]
 [connection signal="pressed" from="PartidaIA2Menu/VBoxContainer/StartGameIaIa" to="." method="_on_start_game_ia_ia_pressed"]

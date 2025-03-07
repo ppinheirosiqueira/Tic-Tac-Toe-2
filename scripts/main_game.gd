@@ -1,17 +1,15 @@
 extends Node2D
 
-@onready var tabuleiro_maior: Control = $TabuleiroMaior
-@onready var info_panel: Control = $InfoPanel
+@onready var tabuleiro_maior: Control = $Fundo/TabuleiroMaior
+@onready var info_panel: Control = $Fundo/InfoPanel
 
 var tipo_jogo:int
 var IA_1:int
 var IA_2:int
 var numero_jogos:int = 1
+var max_numero_jogos:int = 1
 
 func _ready() -> void:
-	info_panel.size.x = get_viewport().size.x - 993
-	info_panel.size.y = get_viewport().size.y - 32
-	info_panel.position = Vector2(993,16)
 	info_panel.create_marker_rodada_atual(1)
 	tabuleiro_maior.connect("player_atual", _on_change_player_atual)
 	tabuleiro_maior.connect("end_game", _on_end_game)
@@ -22,8 +20,6 @@ func configurar_jogo(name1:String, name2:String, game_type:int, dificuldadeIA:in
 	tipo_jogo = game_type
 	IA_1 = dificuldadeIA
 	IA_2 = dificuldadeIA2
-	print("IA 1: ", IA_1)
-	print("IA 2: ", IA_2)
 	if tipo_jogo == 2:
 		$IA_Timer.start()
 
@@ -33,12 +29,6 @@ func _on_change_player_atual(player:int) -> void:
 		$IA_Timer.start()
 
 func _on_end_game(winner:int) -> void:
-	print("Jogo número ", numero_jogos)
-	print("Vencedor: ", winner)
-	print("Tabuleiro Final: ", tabuleiro_maior.big_posicoes)
-	for tabuleiro in tabuleiro_maior.tabuleiros:
-		print(tabuleiro.posicoes)
-	print('\n')
 	info_panel.att_vitorias(winner)
 
 func _on_new_game() -> void:
@@ -59,5 +49,5 @@ func _on_ia_timer_timeout() -> void:
 
 func _on_info_panel_check_ia_ia() -> void:
 	if tipo_jogo == 2:
-		if numero_jogos < 100:
+		if numero_jogos < max_numero_jogos:
 			_on_new_game()

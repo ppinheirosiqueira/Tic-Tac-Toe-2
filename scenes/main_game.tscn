@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://b63rxhble23w1"]
 
-[ext_resource type="Script" path="res://scripts/main_game.gd" id="1_cms6h"]
-[ext_resource type="PackedScene" uid="uid://bqwywdx3bysmf" path="res://scenes/tabuleiro_maior.tscn" id="1_y08gp"]
-[ext_resource type="PackedScene" uid="uid://csgr7vd17feoo" path="res://scenes/info_panel.tscn" id="2_shwp6"]
+[ext_resource type="Script" uid="uid://bgs2mqt8sqcfo" path="res://scripts/main_game.gd" id="1_cms6h"]
+[ext_resource type="PackedScene" uid="uid://bqwywdx3bysmf" path="res://scenes/tabuleiro/tabuleiro_maior.tscn" id="1_y08gp"]
+[ext_resource type="PackedScene" uid="uid://csgr7vd17feoo" path="res://scenes/menus/info_panel.tscn" id="2_shwp6"]
 
 [node name="MainGame" type="Node2D"]
 script = ExtResource("1_cms6h")
@@ -17,15 +17,18 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.026438, 0.339213, 0.439275, 1)
 
-[node name="InfoPanel" parent="." instance=ExtResource("2_shwp6")]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_right = 865.0
-grow_horizontal = 1
-grow_vertical = 1
+[node name="InfoPanel" parent="Fundo" instance=ExtResource("2_shwp6")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -707.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
 
-[node name="TabuleiroMaior" parent="." instance=ExtResource("1_y08gp")]
+[node name="TabuleiroMaior" parent="Fundo" instance=ExtResource("1_y08gp")]
 offset_left = 120.0
 offset_top = 16.0
 offset_right = 1200.0
@@ -35,5 +38,5 @@ offset_bottom = 1096.0
 wait_time = 0.5
 one_shot = true
 
-[connection signal="check_ia_ia" from="InfoPanel" to="." method="_on_info_panel_check_ia_ia"]
+[connection signal="check_ia_ia" from="Fundo/InfoPanel" to="." method="_on_info_panel_check_ia_ia"]
 [connection signal="timeout" from="IA_Timer" to="." method="_on_ia_timer_timeout"]

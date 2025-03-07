@@ -1,12 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://e5kbp44kmm52"]
+[gd_scene load_steps=8 format=3 uid="uid://e5kbp44kmm52"]
 
-[ext_resource type="Script" path="res://scripts/menus/initial_menu.gd" id="1_w3op8"]
-[ext_resource type="ButtonGroup" uid="uid://dyhimedbsnec6" path="res://button_group_ia2.tres" id="3_gpwsr"]
+[ext_resource type="Script" uid="uid://u56r68hortcu" path="res://scripts/menus/initial_menu.gd" id="1_w3op8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qak31"]
 bg_color = Color(0.0941176, 0.447059, 0.768627, 1)
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_yjdjj"]
+
+[sub_resource type="Resource" id="Resource_5g4d2"]
+metadata/__load_path__ = "res://button_group_ia2.tres"
+
+[sub_resource type="Resource" id="Resource_6ti70"]
+metadata/__load_path__ = "res://button_group_ia2.tres"
+
+[sub_resource type="Resource" id="Resource_xkl08"]
+metadata/__load_path__ = "res://button_group_ia2.tres"
+
+[sub_resource type="Resource" id="Resource_ia2iv"]
+metadata/__load_path__ = "res://button_group_ia2.tres"
 
 [node name="InitialPanel" type="Panel"]
 anchors_preset = 15
@@ -266,23 +277,23 @@ horizontal_alignment = 1
 
 [node name="IA2_1" type="CheckButton" parent="panel_IAxIA/MarginContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-button_group = ExtResource("3_gpwsr")
+button_group = SubResource("Resource_5g4d2")
 text = "Aleatório"
 
 [node name="IA2_2" type="CheckButton" parent="panel_IAxIA/MarginContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 button_pressed = true
-button_group = ExtResource("3_gpwsr")
+button_group = SubResource("Resource_6ti70")
 text = "Fácil"
 
 [node name="IA2_3" type="CheckButton" parent="panel_IAxIA/MarginContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-button_group = ExtResource("3_gpwsr")
+button_group = SubResource("Resource_xkl08")
 text = "Médio"
 
 [node name="IA2_4" type="CheckButton" parent="panel_IAxIA/MarginContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-button_group = ExtResource("3_gpwsr")
+button_group = SubResource("Resource_ia2iv")
 text = "Difícil"
 
 [node name="StartGameIAxIA" type="Button" parent="panel_IAxIA"]

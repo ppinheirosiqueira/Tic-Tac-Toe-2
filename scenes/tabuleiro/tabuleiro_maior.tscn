@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bqwywdx3bysmf"]
 
-[ext_resource type="Script" path="res://scripts/tabuleiro_maior.gd" id="1_ihiev"]
-[ext_resource type="PackedScene" uid="uid://byvk5n7pxaoit" path="res://scenes/tabuleiro.tscn" id="2_6xdip"]
+[ext_resource type="Script" uid="uid://b0obbaa8pvqyv" path="res://scripts/tabuleiro/tabuleiro_maior.gd" id="1_ihiev"]
+[ext_resource type="PackedScene" uid="uid://byvk5n7pxaoit" path="res://scenes/tabuleiro/tabuleiro.tscn" id="2_6xdip"]
 
 [node name="TabuleiroMaior" type="Control"]
 layout_mode = 3

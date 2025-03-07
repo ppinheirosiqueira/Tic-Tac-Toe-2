@@ -1,9 +1,7 @@
-res://scenes/cell.tscn
-res://scenes/tabuleiro.tscn
-res://scenes/tabuleiro_maior.tscn
-res://scenes/main_game.tscn
-res://scenes/info_panel.tscn
-res://scenes/game_over_menu.tscn
-res://scenes/regras.tscn
 res://scenes/main.tscn
-res://scenes/new_game_menu.tscn
+res://scenes/main_game.tscn
+res://scripts/main_game.gd
+res://scenes/menus/new_game_menu.tscn
+res://scripts/menus/new_game_menu.gd
+res://scripts/main.gd
+res://scenes/menus/info_panel.tscn

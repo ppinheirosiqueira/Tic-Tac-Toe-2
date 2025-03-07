@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dmctyam6teb44"]
 
-[ext_resource type="Script" path="res://scripts/borders.gd" id="1_yvv6b"]
+[ext_resource type="Script" uid="uid://ceku5vr2ffgku" path="res://scripts/tabuleiro/borders.gd" id="1_yvv6b"]
 
 [node name="Borders" type="Control"]
 layout_mode = 3

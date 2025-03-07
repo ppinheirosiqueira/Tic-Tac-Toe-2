@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://byvk5n7pxaoit"]
 
-[ext_resource type="Script" path="res://scripts/tabuleiro.gd" id="1_2h011"]
-[ext_resource type="PackedScene" uid="uid://e0jwl3527kcf" path="res://scenes/cell.tscn" id="1_btno1"]
+[ext_resource type="Script" uid="uid://bjyuv026kfv3r" path="res://scripts/tabuleiro/tabuleiro.gd" id="1_2h011"]
+[ext_resource type="PackedScene" uid="uid://e0jwl3527kcf" path="res://scenes/tabuleiro/cell.tscn" id="1_btno1"]
 [ext_resource type="PackedScene" uid="uid://cn4lnepleltox" path="res://scenes/markers/circle.tscn" id="2_fq3f4"]
-[ext_resource type="PackedScene" uid="uid://dmctyam6teb44" path="res://scenes/borders.tscn" id="3_7lucu"]
+[ext_resource type="PackedScene" uid="uid://dmctyam6teb44" path="res://scenes/tabuleiro/borders.tscn" id="3_7lucu"]
 [ext_resource type="PackedScene" uid="uid://c7onln7jqs58j" path="res://scenes/markers/cross.tscn" id="3_vj8tw"]
 
 [node name="Tabuleiro" type="Control"]

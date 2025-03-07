@@ -4,6 +4,9 @@ var dificuldade:int = 0
 var dificuldade2:int = 0
 var name1: String
 var name2: String
+var numPartidas: int = 10
+
+@onready var labelNumPartidas = %LabelNumPartidas
 
 signal start_game
 
@@ -94,4 +97,12 @@ func _on_start_game_ia_pressed() -> void:
 	start_game.emit(name1 if name1 else "Player 1",name2,1,dificuldade,0)
 
 func _on_start_game_ia_ia_pressed() -> void:
-	start_game.emit(name1,name2,2,dificuldade,dificuldade2)
+	numPartidas = int(%LabelNumPartidas.text)
+	start_game.emit(name1,name2,2,dificuldade,dificuldade2,numPartidas)
+
+func _on_label_num_partidas_text_changed(new_text: String) -> void:
+	var filtered_text = ""
+	for letra in new_text:
+		if letra.is_valid_int():
+			filtered_text += letra
+	labelNumPartidas.text = filtered_text

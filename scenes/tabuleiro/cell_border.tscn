@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bapgkit1kjgvu"]
 
-[ext_resource type="Script" path="res://scripts/cell_border.gd" id="1_baxps"]
+[ext_resource type="Script" uid="uid://bi570xkk7hd5u" path="res://scripts/tabuleiro/cell_border.gd" id="1_baxps"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7rge3"]
 bg_color = Color(0, 0, 0, 1)
