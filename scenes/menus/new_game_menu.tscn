@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://pp7j008tvcws"]
+[gd_scene load_steps=9 format=3 uid="uid://pp7j008tvcws"]
 
 [ext_resource type="Script" uid="uid://btqrxtkoqq56l" path="res://scripts/menus/new_game_menu.gd" id="1_l3o1f"]
 [ext_resource type="Theme" uid="uid://be5eam43o2vgt" path="res://tema_principal.tres" id="2_0yjgr"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://ivi0k786xebg" path="res://scenes/menus/partida_local_menu.tscn" id="4_kjjkb"]
 [ext_resource type="PackedScene" uid="uid://ou0ega1yamh4" path="res://scenes/menus/partida_ia_menu.tscn" id="4_plqvo"]
 [ext_resource type="PackedScene" uid="uid://ccr6w74emikr1" path="res://scenes/menus/partida_ia_ia_menu.tscn" id="5_ll2dp"]
+[ext_resource type="Texture2D" uid="uid://c4shafps1pccm" path="res://assets/images/en-usa.jpg" id="7_gxr25"]
+[ext_resource type="Texture2D" uid="uid://bixcd54w3ubsc" path="res://assets/images/pt-br.png" id="8_3bcgg"]
 
 [node name="NewGameMenu" type="ColorRect"]
 custom_minimum_size = Vector2(720, 1080)
@@ -106,8 +108,10 @@ selected = 0
 fit_to_longest_item = false
 item_count = 2
 popup/item_0/text = "EN"
+popup/item_0/icon = ExtResource("7_gxr25")
 popup/item_0/id = 0
 popup/item_1/text = "PT"
+popup/item_1/icon = ExtResource("8_3bcgg")
 popup/item_1/id = 1
 
 [connection signal="pressed" from="VBoxContainer/PartidaLocal" to="." method="_on_partida_local_pressed"]
