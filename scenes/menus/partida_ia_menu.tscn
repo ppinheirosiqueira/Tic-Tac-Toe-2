@@ -1,0 +1,101 @@
+[gd_scene load_steps=4 format=3 uid="uid://ou0ega1yamh4"]
+
+[ext_resource type="Script" uid="uid://cmc4parejxnwt" path="res://scripts/menus/partida_ia_menu.gd" id="1_4yd4d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rrkxu"]
+bg_color = Color(0.94902, 0.929412, 0.854902, 1)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_m4s5t"]
+resource_name = "DificuldadeIA1"
+
+[node name="Window" type="Window"]
+initial_position = 2
+size = Vector2i(400, 300)
+script = ExtResource("1_4yd4d")
+
+[node name="PartidaIAMenu" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rrkxu")
+
+[node name="MarginContainer" type="MarginContainer" parent="PartidaIAMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PartidaIAMenu/MarginContainer"]
+layout_mode = 2
+
+[node name="LabelPlayer" type="Label" parent="PartidaIAMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Nome do Jogador:"
+horizontal_alignment = 1
+
+[node name="NamePlayerIA" type="LineEdit" parent="PartidaIAMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VSpace" type="Control" parent="PartidaIAMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LabelIA" type="Label" parent="PartidaIAMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Escolha a dificuldade da IA:
+"
+horizontal_alignment = 1
+
+[node name="IaSolo_0" type="CheckButton" parent="PartidaIAMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+button_group = SubResource("ButtonGroup_m4s5t")
+text = "Aleatório"
+
+[node name="IaSolo_1" type="CheckButton" parent="PartidaIAMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+button_pressed = true
+button_group = SubResource("ButtonGroup_m4s5t")
+text = "Fácil"
+
+[node name="IaSolo_2" type="CheckButton" parent="PartidaIAMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+button_group = SubResource("ButtonGroup_m4s5t")
+text = "Médio
+"
+
+[node name="IaSolo_3" type="CheckButton" parent="PartidaIAMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+button_group = SubResource("ButtonGroup_m4s5t")
+text = "Difícil"
+
+[node name="VSpace2" type="Control" parent="PartidaIAMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="StartGameIA" type="Button" parent="PartidaIAMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"Button_Menus"
+text = "Start Game
+"
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="text_changed" from="PartidaIAMenu/MarginContainer/VBoxContainer/NamePlayerIA" to="." method="_on_name_player_ia_text_changed"]
+[connection signal="pressed" from="PartidaIAMenu/MarginContainer/VBoxContainer/IaSolo_0" to="." method="_on_ia_solo_0_pressed"]
+[connection signal="pressed" from="PartidaIAMenu/MarginContainer/VBoxContainer/IaSolo_1" to="." method="_on_ia_solo_1_pressed"]
+[connection signal="toggled" from="PartidaIAMenu/MarginContainer/VBoxContainer/IaSolo_1" to="." method="_on_ia_solo_1_toggled"]
+[connection signal="pressed" from="PartidaIAMenu/MarginContainer/VBoxContainer/IaSolo_2" to="." method="_on_ia_solo_2_pressed"]
+[connection signal="pressed" from="PartidaIAMenu/MarginContainer/VBoxContainer/IaSolo_3" to="." method="_on_ia_solo_3_pressed"]
+[connection signal="pressed" from="PartidaIAMenu/MarginContainer/VBoxContainer/StartGameIA" to="." method="_on_start_game_ia_pressed"]

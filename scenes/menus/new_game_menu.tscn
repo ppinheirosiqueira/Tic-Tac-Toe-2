@@ -1,369 +1,91 @@
-[gd_scene load_steps=6 format=3 uid="uid://pp7j008tvcws"]
+[gd_scene load_steps=7 format=3 uid="uid://pp7j008tvcws"]
 
 [ext_resource type="Script" uid="uid://btqrxtkoqq56l" path="res://scripts/menus/new_game_menu.gd" id="1_l3o1f"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rrkxu"]
-bg_color = Color(0.419813, 0.419813, 0.419813, 1)
-border_width_left = 8
-border_width_top = 8
-border_width_right = 8
-border_width_bottom = 8
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-expand_margin_left = 32.0
-expand_margin_top = 32.0
-expand_margin_right = 32.0
-expand_margin_bottom = 32.0
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_m4s5t"]
-resource_name = "DificuldadeIA1"
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_78ukb"]
-resource_name = "IA1_dificuldade"
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_hjnmx"]
-resource_name = "IA2_dificuldade"
+[ext_resource type="Theme" uid="uid://be5eam43o2vgt" path="res://tema_principal.tres" id="2_0yjgr"]
+[ext_resource type="PackedScene" uid="uid://dqvuj160i4a2v" path="res://scenes/menus/regras.tscn" id="2_sg01b"]
+[ext_resource type="PackedScene" uid="uid://ivi0k786xebg" path="res://scenes/menus/partida_local_menu.tscn" id="4_kjjkb"]
+[ext_resource type="PackedScene" uid="uid://ou0ega1yamh4" path="res://scenes/menus/partida_ia_menu.tscn" id="4_plqvo"]
+[ext_resource type="PackedScene" uid="uid://ccr6w74emikr1" path="res://scenes/menus/partida_ia_ia_menu.tscn" id="5_ll2dp"]
 
 [node name="NewGameMenu" type="ColorRect"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 183.0
-offset_top = -353.0
-offset_right = 183.0
-offset_bottom = -353.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.0282116, 0.257114, 0.371457, 1)
+color = Color(0.94902, 0.929412, 0.854902, 1)
 script = ExtResource("1_l3o1f")
+regras_scene = ExtResource("2_sg01b")
+partida_local_scene = ExtResource("4_kjjkb")
+partida_ia_scene = ExtResource("4_plqvo")
+partida_ia_ia_scene = ExtResource("5_ll2dp")
 
-[node name="Titulo" type="Label" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -59.0
-offset_top = 120.0
-offset_right = 59.0
-offset_bottom = 143.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VSpace" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Titulo" type="Label" parent="VBoxContainer"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "Jogo da Velha 2"
 horizontal_alignment = 1
 
-[node name="PartidaLocal" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 120.0
-offset_top = -15.5
-offset_right = 229.0
-offset_bottom = 15.5
-grow_vertical = 2
-theme_override_font_sizes/font_size = 32
+[node name="VSpace2" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PartidaLocal" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_0yjgr")
 text = "Partida Local"
 
-[node name="PartidaIA" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 120.0
-offset_top = 93.5
-offset_right = 329.0
-offset_bottom = 146.5
-grow_vertical = 2
+[node name="VSpace3" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.25
+
+[node name="PartidaIA" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 32
 text = "Partida Contra IA"
 
-[node name="PartidaIA2" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 120.0
-offset_top = 213.5
-offset_right = 329.0
-offset_bottom = 266.5
-grow_vertical = 2
+[node name="VSpace4" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.25
+
+[node name="PartidaIA2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 32
 text = "IA contra IA"
 
-[node name="PartidaLocalMenu" type="Panel" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -100.0
-offset_right = 200.0
-offset_bottom = 100.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rrkxu")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PartidaLocalMenu"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="PartidaLocalMenu/VBoxContainer"]
-layout_mode = 2
-text = "Nome 1º Jogador:"
-horizontal_alignment = 1
-
-[node name="NamePlayer" type="LineEdit" parent="PartidaLocalMenu/VBoxContainer"]
-layout_mode = 2
-
-[node name="VSpace" type="Control" parent="PartidaLocalMenu/VBoxContainer"]
+[node name="VSpace5" type="Control" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label2" type="Label" parent="PartidaLocalMenu/VBoxContainer"]
-layout_mode = 2
-text = "Nome 2º Jogador:"
-horizontal_alignment = 1
-
-[node name="NamePlayer2" type="LineEdit" parent="PartidaLocalMenu/VBoxContainer"]
-layout_mode = 2
-
-[node name="VSpace2" type="Control" parent="PartidaLocalMenu/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="StartGameLocal" type="Button" parent="PartidaLocalMenu/VBoxContainer"]
+[node name="RegrasButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Start Game"
+theme_override_font_sizes/font_size = 32
+text = "REGRAS"
 
-[node name="VSpace3" type="Control" parent="PartidaLocalMenu/VBoxContainer"]
+[node name="VSpace6" type="Control" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="PartidaIAMenu" type="Panel" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -150.0
-offset_right = 200.0
-offset_bottom = 150.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rrkxu")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PartidaIAMenu"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="LabelPlayer" type="Label" parent="PartidaIAMenu/VBoxContainer"]
-layout_mode = 2
-text = "Nome do Jogador:"
-horizontal_alignment = 1
-
-[node name="NamePlayerIA" type="LineEdit" parent="PartidaIAMenu/VBoxContainer"]
-layout_mode = 2
-
-[node name="VSpace" type="Control" parent="PartidaIAMenu/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="LabelIA" type="Label" parent="PartidaIAMenu/VBoxContainer"]
-layout_mode = 2
-text = "Escolha a dificuldade da IA:
-"
-horizontal_alignment = 1
-
-[node name="IaSolo_0" type="CheckButton" parent="PartidaIAMenu/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-button_group = SubResource("ButtonGroup_m4s5t")
-text = "Aleatório"
-
-[node name="IaSolo_1" type="CheckButton" parent="PartidaIAMenu/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-button_pressed = true
-button_group = SubResource("ButtonGroup_m4s5t")
-text = "Fácil"
-
-[node name="IaSolo_2" type="CheckButton" parent="PartidaIAMenu/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-button_group = SubResource("ButtonGroup_m4s5t")
-text = "Médio
-"
-
-[node name="IaSolo_3" type="CheckButton" parent="PartidaIAMenu/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-button_group = SubResource("ButtonGroup_m4s5t")
-text = "Difícil"
-
-[node name="VSpace2" type="Control" parent="PartidaIAMenu/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="StartGameIA" type="Button" parent="PartidaIAMenu/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Start Game
-"
-
-[node name="PartidaIA2Menu" type="Panel" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -125.0
-offset_right = 200.0
-offset_bottom = 125.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rrkxu")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PartidaIA2Menu"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = 8.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="PartidaIA2Menu/VBoxContainer"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PartidaIA2Menu/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="PartidaIA2Menu/VBoxContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "Dificuldade IA:"
-horizontal_alignment = 1
-
-[node name="IA_0" type="CheckButton" parent="PartidaIA2Menu/VBoxContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-button_group = SubResource("ButtonGroup_78ukb")
-text = "Aleatório"
-
-[node name="IA_1" type="CheckButton" parent="PartidaIA2Menu/VBoxContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-button_pressed = true
-button_group = SubResource("ButtonGroup_78ukb")
-text = "Fácil
-"
-
-[node name="IA_2" type="CheckButton" parent="PartidaIA2Menu/VBoxContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-button_group = SubResource("ButtonGroup_78ukb")
-text = "Médio
-"
-
-[node name="IA_3" type="CheckButton" parent="PartidaIA2Menu/VBoxContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-button_group = SubResource("ButtonGroup_78ukb")
-text = "Difícil"
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="PartidaIA2Menu/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label2" type="Label" parent="PartidaIA2Menu/VBoxContainer/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-text = "Dificuldade IA2:"
-horizontal_alignment = 1
-
-[node name="IA2_0" type="CheckButton" parent="PartidaIA2Menu/VBoxContainer/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-button_group = SubResource("ButtonGroup_hjnmx")
-text = "Aleatório"
-
-[node name="IA2_1" type="CheckButton" parent="PartidaIA2Menu/VBoxContainer/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-button_pressed = true
-button_group = SubResource("ButtonGroup_hjnmx")
-text = "Fácil"
-
-[node name="IA2_2" type="CheckButton" parent="PartidaIA2Menu/VBoxContainer/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-button_group = SubResource("ButtonGroup_hjnmx")
-text = "Médio
-"
-
-[node name="IA2_3" type="CheckButton" parent="PartidaIA2Menu/VBoxContainer/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-button_group = SubResource("ButtonGroup_hjnmx")
-text = "Difícil"
-
-[node name="VSpace" type="Control" parent="PartidaIA2Menu/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="PartidaIA2Menu/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="PartidaIA2Menu/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-text = "Quantidade de Partidas:"
-
-[node name="LabelNumPartidas" type="LineEdit" parent="PartidaIA2Menu/VBoxContainer/HBoxContainer2"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "10"
-alignment = 2
-
-[node name="VSpace2" type="Control" parent="PartidaIA2Menu/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="StartGameIaIa" type="Button" parent="PartidaIA2Menu/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Start Game"
-
-[connection signal="pressed" from="PartidaLocal" to="." method="_on_partida_local_pressed"]
-[connection signal="pressed" from="PartidaIA" to="." method="_on_partida_ia_pressed"]
-[connection signal="pressed" from="PartidaIA2" to="." method="_on_partida_ia_2_pressed"]
-[connection signal="text_changed" from="PartidaLocalMenu/VBoxContainer/NamePlayer" to="." method="_on_name_player_text_changed"]
-[connection signal="text_changed" from="PartidaLocalMenu/VBoxContainer/NamePlayer2" to="." method="_on_name_player_2_text_changed"]
-[connection signal="pressed" from="PartidaLocalMenu/VBoxContainer/StartGameLocal" to="." method="_on_start_game_local_pressed"]
-[connection signal="text_changed" from="PartidaIAMenu/VBoxContainer/NamePlayerIA" to="." method="_on_name_player_ia_text_changed"]
-[connection signal="pressed" from="PartidaIAMenu/VBoxContainer/IaSolo_0" to="." method="_on_ia_solo_0_pressed"]
-[connection signal="pressed" from="PartidaIAMenu/VBoxContainer/IaSolo_1" to="." method="_on_ia_solo_1_pressed"]
-[connection signal="pressed" from="PartidaIAMenu/VBoxContainer/IaSolo_2" to="." method="_on_ia_solo_2_pressed"]
-[connection signal="pressed" from="PartidaIAMenu/VBoxContainer/IaSolo_3" to="." method="_on_ia_solo_3_pressed"]
-[connection signal="pressed" from="PartidaIAMenu/VBoxContainer/StartGameIA" to="." method="_on_start_game_ia_pressed"]
-[connection signal="pressed" from="PartidaIA2Menu/VBoxContainer/HBoxContainer/VBoxContainer/IA_0" to="." method="_on_ia_0_pressed"]
-[connection signal="pressed" from="PartidaIA2Menu/VBoxContainer/HBoxContainer/VBoxContainer/IA_1" to="." method="_on_ia_1_pressed"]
-[connection signal="pressed" from="PartidaIA2Menu/VBoxContainer/HBoxContainer/VBoxContainer/IA_2" to="." method="_on_ia_2_pressed"]
-[connection signal="pressed" from="PartidaIA2Menu/VBoxContainer/HBoxContainer/VBoxContainer/IA_3" to="." method="_on_ia_3_pressed"]
-[connection signal="pressed" from="PartidaIA2Menu/VBoxContainer/HBoxContainer/VBoxContainer2/IA2_0" to="." method="_on_ia_2_0_pressed"]
-[connection signal="pressed" from="PartidaIA2Menu/VBoxContainer/HBoxContainer/VBoxContainer2/IA2_1" to="." method="_on_ia_2_1_pressed"]
-[connection signal="pressed" from="PartidaIA2Menu/VBoxContainer/HBoxContainer/VBoxContainer2/IA2_2" to="." method="_on_ia_2_2_pressed"]
-[connection signal="pressed" from="PartidaIA2Menu/VBoxContainer/HBoxContainer/VBoxContainer2/IA2_3" to="." method="_on_ia_2_3_pressed"]
-[connection signal="text_changed" from="PartidaIA2Menu/VBoxContainer/HBoxContainer2/LabelNumPartidas" to="." method="_on_label_num_partidas_text_changed"]
-[connection signal="pressed" from="PartidaIA2Menu/VBoxContainer/StartGameIaIa" to="." method="_on_start_game_ia_ia_pressed"]
+[connection signal="pressed" from="VBoxContainer/PartidaLocal" to="." method="_on_partida_local_pressed"]
+[connection signal="pressed" from="VBoxContainer/PartidaIA" to="." method="_on_partida_ia_pressed"]
+[connection signal="pressed" from="VBoxContainer/PartidaIA2" to="." method="_on_partida_ia_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/RegrasButton" to="." method="_on_regras_button_pressed"]

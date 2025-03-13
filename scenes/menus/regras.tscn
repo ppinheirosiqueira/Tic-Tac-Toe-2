@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cy6qtsjokis88" path="res://scripts/menus/regras.gd" id="1_diu0g"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ftyvd"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0.94902, 0.929412, 0.854902, 1)
 
 [node name="RegrasWindow" type="Window"]
 process_mode = 2
@@ -31,24 +31,40 @@ grow_vertical = 2
 bbcode_enabled = true
 text = "[center][b]Objetivo do Jogo:[/b][/center]
 
-O objetivo do Jogo da Velha 2 é o mesmo que o do Jogo da Velha tradicional: ser o primeiro a completar uma linha, coluna ou diagonal com seus marcadores.
+O objetivo do Jogo da Velha 2 é o mesmo do tradicional: formar uma linha, coluna ou diagonal com seus marcadores. No entanto, a mecânica é expandida para um tabuleiro maior, exigindo mais estratégia.
 
 [center][b]Estrutura do Jogo:[/b][/center]
 
-Cada quadrado do Jogo da Velha 2 contém um Jogo da Velha menor dentro dele. Isso significa que, além de jogar no tabuleiro principal, os jogadores jogarão principalmente em tabuleiros menores simultaneamente.
+O jogo acontece em um tabuleiro 3x3, onde cada quadrado contém um Jogo da Velha menor dentro dele. Para marcar um espaço no tabuleiro principal, os jogadores precisam vencer nos tabuleiros menores.
 
-[center][b]Restrições de Movimento:[/b][/center]
+[center][b]Regras de Movimento:[/b][/center]
 
-Os jogadores não podem simplesmente colocar seus marcadores onde quiserem. O movimento de um jogador sempre dependerá do movimento anterior de seu adversário.
+Os jogadores não podem escolher livremente onde jogar. O local da jogada sempre depende do último movimento do adversário.
 
-Por exemplo, o primeiro jogador a jogar pode escolher qualquer um dos quadrados menores para fazer sua jogada. Se ele escolher o quadrado superior esquerdo em um dos 9 jogos, o próximo jogador deve fazer sua jogada obrigatoriamente no quadrado superior esquerdo do tabuleiro. Já no tabuleiro superior, o segundo jogador escolher o quadrado inferior direito, o primeiro jogador deve, então, fazer sua próxima jogada em um dos campos do quadrado inferior direito.
+[ul]
+O primeiro jogador pode escolher qualquer tabuleiro menor dentro do tabuleiro principal para fazer o primeiro movimento.
+A casa escolhida dentro do tabuleiro menor define o próximo tabuleiro menor em que o oponente deverá fazer seu movimento.
+[ul]
+Exemplo: se o primeiro jogador marca um símbolo no canto superior esquerdo de um tabuleiro menor, o adversário deve jogar no tabuleiro menor que ocupa essa mesma posição no tabuleiro principal.
+Caso o tabuleiro correspondente já tenha sido vencido, o jogador pode escolher qualquer outro tabuleiro menor ainda em jogo.
+[/ul][/ul]
 
-[center][b]Progressão do Jogo:[/b][/center]
+[center][b]Vitória e Progressão:[/b][/center]
 
-O jogo continua dessa forma, com os jogadores alternando entre os tabuleiros menores, até que um jogador complete uma linha, coluna ou diagonal no tabuleiro principal. Para preencher qualquer quadrado do tabuleiro principal, é necessário vencer no tabuleiro pequeno.
+Para conquistar um espaço no tabuleiro principal, um jogador deve vencer o respectivo tabuleiro menor formando uma linha, coluna ou diagonal.
 
-[center][b]Finalização de Quadrados Menores:[/b][/center]
+O jogo continua dessa forma até que um dos jogadores complete uma linha, coluna ou diagonal no tabuleiro principal, vencendo a partida.
 
-Um tabuleiro menor é concluído igual qualquer outro jogo da velha, quando uma linha, coluna ou diagonal é preenchida. Quando um jogador faz uma jogada que mandaria a um quadrado finalizado, o próximo jogador pode fazer suas jogadas em qualquer um dos quadrados menores restantes, pois o tabuleiro alvo já foi finalizado e não pode mais ser preenchido. Caso ocorra um empate em um tabuleiro menor, este é resetado."
+[center][b]Finalização de Tabuleiros Menores:[/b][/center]
+
+[ul]
+Quando um tabuleiro menor é vencido, ele é marcado pelo símbolo do vencedor e não pode mais ser jogado.
+Se um jogador for enviado para um tabuleiro já concluído, ele pode escolher qualquer tabuleiro ainda disponível.
+Se um tabuleiro menor terminar em empate, ele é zerado e pode ser jogado novamente.
+[ul]
+O empate só ocorre quando todas as 9 posições do tabuleiro menor são ocupadas, mesmo que, com 8 posições preenchidas, já não seja possível determinar um vencedor.
+[/ul]
+[/ul]
+"
 
 [connection signal="close_requested" from="." to="." method="_on_close_requested"]

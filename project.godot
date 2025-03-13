@@ -17,6 +17,14 @@ config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=1920
+window/size/viewport_width=720
 window/size/viewport_height=1080
-window/size/mode=2
+
+[gui]
+
+theme/custom="uid://be5eam43o2vgt"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

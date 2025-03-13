@@ -32,7 +32,7 @@ func create_marker_rodada_atual(player:int) -> void:
 		new_mark = circle_scene.instantiate()
 	else:
 		new_mark = cross_scene.instantiate()
-	new_mark.scale = Vector2(1.25, 1.25)
+	new_mark.scale = Vector2(1.5, 1.5)
 	new_mark.position += shift_player_atual
 	panel_player_atual.add_child(new_mark)
 
