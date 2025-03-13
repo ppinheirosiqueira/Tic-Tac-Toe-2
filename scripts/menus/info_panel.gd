@@ -1,6 +1,5 @@
 extends Control
 
-@export var game_over_scene: PackedScene
 @export var regras_scene: PackedScene
 @export var circle_scene: PackedScene
 @export var cross_scene: PackedScene
@@ -9,13 +8,15 @@ extends Control
 
 var ia_ia:bool
 
-signal restart
-signal check_ia_ia
-
-var vitorias: Array = [0, 0, 0]
+var vitorias: Array[int] = [0, 0, 0]
 var nome_player1: String
 var nome_player2: String
 var shift_player_atual: Vector2
+
+func _ready() -> void:
+	%RegrasButton.text = tr("RULES")
+	%PlayerAtual.text = tr("JOGADOR_ATUAL")
+	%Empate.text = tr("DRAWS")
 
 func att_nomes(nome1: String, nome2:String, tipo:bool) -> void:
 	ia_ia = tipo
@@ -37,29 +38,15 @@ func create_marker_rodada_atual(player:int) -> void:
 	panel_player_atual.add_child(new_mark)
 
 func att_vitorias(vencedor:int) -> void:
-	var game_over = game_over_scene.instantiate()
 	if vencedor == 1:
-		game_over.att_label(vencedor, nome_player1)
 		vitorias[0] += 1
 		%Player1ScoreLabel.text = str(vitorias[0])
 	elif vencedor == -1:
-		game_over.att_label(vencedor, nome_player2)
 		vitorias[1] += 1
 		%Player2ScoreLabel.text = str(vitorias[1])
 	else:
-		game_over.att_label(vencedor, "")
 		vitorias[2] += 1
 		%EmpateScoreLabel.text = str(vitorias[2])
-	game_over.connect("restart",_on_game_over_menu_restart)
-	if ia_ia:
-		check_ia_ia.emit()
-	else:
-		add_child(game_over)
-		get_tree().paused = true
-
-func _on_game_over_menu_restart() -> void:
-	restart.emit()
-	get_tree().paused = false
 
 func _on_regras_button_pressed() -> void:
 	var regra = regras_scene.instantiate()

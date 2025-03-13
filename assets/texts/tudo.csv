@@ -1,0 +1,98 @@
+key,en_US,pt_BR
+TITLE,Tic Tac Toe 2,Jogo da Velha 2
+LOCAL,Local Match,Partida Local
+IA,Match x IA,Partida contra IA
+IAxIA,IA x IA,IA x IA
+RULES,RULES,REGRAS
+NEW_GAME_BUTTON,New Game,Novo Jogo
+INITIAL_PAGE_BUTTON,Initial Page,Página Inicial
+JOGADOR_ATUAL,Current Player:,Jogador Atual:
+PLAYER_1,Player 1,Jogador 1
+PLAYER_2,Player 2,Jogador 2
+DRAWS,Draws:,Empates:
+WINNER,The winner is: %s,O vencedor é: %s
+DRAW,The game is a draw!,O jogo empatou!
+RANDOM_IA,Random IA,IA Aleatória
+EASY_IA,Easy IA,IA Fácil
+MEDIUM_IA,Medium IA,IA Média
+HARD_IA,Hard IA,IA Difícil
+START_GAME_BUTTON,Start Game,Iniciar Jogo
+NAME_PLAYER,Name of Player, Nome do Jogador
+NAME_1_PLAYER,Name of Player 1, Nome do Jogador 1
+NAME_2_PLAYER,Name of Player 2, Nome do Jogador 2
+CHOOSE_IA_DIFFICULT,Choose the IA difficulty,Escolha a dificuldade da IA
+NUM_OF_MATCHES,Number of Matches,Número de Partidas
+CHOOSE_IA_DIFFICULT_1,Choose the IA 1 difficulty,Escolha a dificuldade da IA 1
+CHOOSE_IA_DIFFICULT_2,Choose the IA 2 difficulty,Escolha a dificuldade da IA 2
+FINAL_IA_MATCH,"IA 1: %s, IA 2: %s, Draws: %s","IA 1: %s, IA 2: %s, Empates: %s"
+RULES_TEXT,"[center][b]Game Objective:[/b][/center]
+
+The objective of [b]Tic-Tac-Toe 2[/b] is the same as the traditional game: to form a line, column, or diagonal with your markers. However, the mechanics are expanded to a larger board, requiring more strategy.
+
+[center][b]Game Structure:[/b][/center]
+
+The game takes place on a [b]3x3 board[/b], where each square contains a [b]smaller Tic-Tac-Toe game[/b] inside it. To mark a space on the main board, players must win in the smaller boards.
+
+[center][b]Movement Rules:[/b][/center]
+
+Players [b]cannot freely choose[/b] where to play. The location of the move always depends on the opponent's last move.
+
+[ul]
+The first player can choose [b]any smaller board[/b] within the main board to make the first move.
+The square chosen within the smaller board determines the next smaller board where the opponent must make their move.
+[ul]
+[i]Example:[/i] If the first player marks a symbol in the top-left corner of a smaller board, the opponent must play in the smaller board that occupies the same position on the main board.
+[b]If the corresponding board has already been won[/b], the player can choose any other smaller board still in play.
+[/ul][/ul]
+
+[center][b]Victory and Progression:[/b][/center]
+
+To conquer a space on the main board, a player must [b]win the respective smaller board[/b] by forming a line, column, or diagonal.
+
+The game continues in this manner until one of the players completes a line, column, or diagonal on the main board, winning the match.
+
+[center][b]Completion of Smaller Boards:[/b][/center]
+
+[ul]
+When a smaller board is won, it is marked with the winner's symbol and [b]can no longer be played[/b].
+If a player is sent to a board that has already been completed, they can choose [b]any available board[/b].
+If a smaller board ends in a [b]tie[/b], it is reset and can be played again.
+[ul]
+[i]A tie only occurs[/i] when all 9 positions of the smaller board are occupied, even if, with 8 positions filled, it is already impossible to determine a winner.
+[/ul]
+[/ul]","[center][b]Objetivo do Jogo:[/b][/center]
+
+O objetivo do [b]Jogo da Velha 2[/b] é o mesmo do tradicional: formar uma linha, coluna ou diagonal com seus marcadores. No entanto, a mecânica é expandida para um tabuleiro maior, exigindo mais estratégia.
+
+[center][b]Estrutura do Jogo:[/b][/center]
+
+O jogo acontece em um tabuleiro [b]3x3[/b], onde cada quadrado contém um [b]Jogo da Velha menor[/b] dentro dele. Para marcar um espaço no tabuleiro principal, os jogadores precisam vencer nos tabuleiros menores.
+
+[center][b]Regras de Movimento:[/b][/center]
+
+Os jogadores [b]não podem escolher livremente[/b] onde jogar. O local da jogada sempre depende do último movimento do adversário.
+
+[ul]
+O primeiro jogador pode escolher [b]qualquer tabuleiro menor[/b] dentro do tabuleiro principal para fazer o primeiro movimento.
+A casa escolhida dentro do tabuleiro menor define o próximo tabuleiro menor em que o oponente deverá fazer seu movimento.
+[ul]
+[i]Exemplo:[/i] Se o primeiro jogador marca um símbolo no canto superior esquerdo de um tabuleiro menor, o adversário deve jogar no tabuleiro menor que ocupa essa mesma posição no tabuleiro principal.
+[b]Caso o tabuleiro correspondente já tenha sido vencido[/b], o jogador pode escolher qualquer outro tabuleiro menor ainda em jogo.
+[/ul][/ul]
+
+[center][b]Vitória e Progressão:[/b][/center]
+
+Para conquistar um espaço no tabuleiro principal, um jogador deve [b]vencer o respectivo tabuleiro menor[/b], formando uma linha, coluna ou diagonal.
+
+O jogo continua dessa forma até que um dos jogadores complete uma linha, coluna ou diagonal no tabuleiro principal, vencendo a partida.
+
+[center][b]Finalização de Tabuleiros Menores:[/b][/center]
+
+[ul]
+Quando um tabuleiro menor é vencido, ele é marcado pelo símbolo do vencedor e [b]não pode mais ser jogado[/b].
+Se um jogador for enviado para um tabuleiro já concluído, ele pode escolher [b]qualquer tabuleiro ainda disponível[/b].
+Se um tabuleiro menor terminar em [b]empate[/b], ele é zerado e pode ser jogado novamente.
+[ul]
+[i]O empate só ocorre[/i] quando todas as 9 posições do tabuleiro menor são ocupadas, mesmo que, com 8 posições preenchidas, já não seja possível determinar um vencedor.
+[/ul]
+[/ul]"

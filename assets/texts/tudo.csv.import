@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://dgoupbbiveohv"
+
+[deps]
+
+files=["res://assets/texts/tudo.en_US.translation", "res://assets/texts/tudo.pt_BR.translation"]
+
+source_file="res://assets/texts/tudo.csv"
+dest_files=["res://assets/texts/tudo.en_US.translation", "res://assets/texts/tudo.pt_BR.translation"]
+
+[params]
+
+compress=true
+delimiter=0

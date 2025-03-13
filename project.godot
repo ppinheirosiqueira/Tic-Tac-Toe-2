@@ -19,12 +19,18 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=720
 window/size/viewport_height=1080
+window/stretch/mode="viewport"
 
 [gui]
 
 theme/custom="uid://be5eam43o2vgt"
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://assets/texts/tudo.en_US.translation", "res://assets/texts/tudo.pt_BR.translation")
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

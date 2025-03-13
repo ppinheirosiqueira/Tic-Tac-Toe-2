@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://csgr7vd17feoo"]
+[gd_scene load_steps=6 format=3 uid="uid://csgr7vd17feoo"]
 
 [ext_resource type="Script" uid="uid://ifdbvwii0gix" path="res://scripts/menus/info_panel.gd" id="1_umelf"]
 [ext_resource type="PackedScene" uid="uid://cn4lnepleltox" path="res://scenes/markers/circle.tscn" id="2_06pow"]
-[ext_resource type="PackedScene" uid="uid://rtittoiwluex" path="res://scenes/menus/game_over_menu.tscn" id="2_wrceg"]
 [ext_resource type="PackedScene" uid="uid://dqvuj160i4a2v" path="res://scenes/menus/regras.tscn" id="3_2yl5t"]
 [ext_resource type="PackedScene" uid="uid://c7onln7jqs58j" path="res://scenes/markers/cross.tscn" id="3_jmxqj"]
 
@@ -27,7 +26,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_umelf")
-game_over_scene = ExtResource("2_wrceg")
 regras_scene = ExtResource("3_2yl5t")
 circle_scene = ExtResource("2_06pow")
 cross_scene = ExtResource("3_jmxqj")
@@ -45,22 +43,22 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="RegrasButton" type="Button" parent="HBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 32
-text = "REGRAS"
+text = "tr(\"RULES\")"
 
 [node name="Space2" type="Control" parent="HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="PlayerAtual" type="Label" parent="HBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
-text = "
-Próximo Jogador:
-"
+text = "tr(\"JOGADOR_ATUAL\")"
 
 [node name="Space3" type="Control" parent="HBoxContainer2"]
 layout_mode = 2
@@ -132,6 +130,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Empate" type="Label" parent="HBoxContainer/VBoxContainer3"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 32

@@ -13,19 +13,13 @@ resource_name = "IA2_dificuldade"
 
 [node name="Window" type="Window"]
 initial_position = 2
-size = Vector2i(400, 250)
+size = Vector2i(450, 250)
 script = ExtResource("1_xh63d")
 
 [node name="PartidaIA2Menu" type="Panel" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -125.0
-offset_right = 200.0
-offset_bottom = 125.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_rrkxu")
@@ -47,22 +41,26 @@ layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PartidaIA2Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 30
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PartidaIA2Menu/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="PartidaIA2Menu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Dificuldade IA:"
 horizontal_alignment = 1
 
 [node name="IA_0" type="CheckButton" parent="PartidaIA2Menu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 button_group = SubResource("ButtonGroup_78ukb")
 text = "Aleatório"
 
 [node name="IA_1" type="CheckButton" parent="PartidaIA2Menu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 button_pressed = true
 button_group = SubResource("ButtonGroup_78ukb")
@@ -70,12 +68,14 @@ text = "Fácil
 "
 
 [node name="IA_2" type="CheckButton" parent="PartidaIA2Menu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 button_group = SubResource("ButtonGroup_78ukb")
 text = "Médio
 "
 
 [node name="IA_3" type="CheckButton" parent="PartidaIA2Menu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 button_group = SubResource("ButtonGroup_78ukb")
 text = "Difícil"
@@ -85,28 +85,33 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Label2" type="Label" parent="PartidaIA2Menu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Dificuldade IA2:"
 horizontal_alignment = 1
 
 [node name="IA2_0" type="CheckButton" parent="PartidaIA2Menu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
 button_group = SubResource("ButtonGroup_hjnmx")
 text = "Aleatório"
 
 [node name="IA2_1" type="CheckButton" parent="PartidaIA2Menu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
 button_pressed = true
 button_group = SubResource("ButtonGroup_hjnmx")
 text = "Fácil"
 
 [node name="IA2_2" type="CheckButton" parent="PartidaIA2Menu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
 button_group = SubResource("ButtonGroup_hjnmx")
 text = "Médio
 "
 
 [node name="IA2_3" type="CheckButton" parent="PartidaIA2Menu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
 button_group = SubResource("ButtonGroup_hjnmx")
 text = "Difícil"
@@ -118,7 +123,8 @@ size_flags_vertical = 3
 [node name="HBoxContainer2" type="HBoxContainer" parent="PartidaIA2Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PartidaIA2Menu/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="LabelNumPartidas2" type="Label" parent="PartidaIA2Menu/MarginContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Quantidade de Partidas:"
 
@@ -133,6 +139,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="StartGameIaIa" type="Button" parent="PartidaIA2Menu/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme_type_variation = &"Button_Menus"

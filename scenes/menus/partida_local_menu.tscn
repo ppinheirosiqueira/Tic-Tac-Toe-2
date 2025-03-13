@@ -39,6 +39,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="PartidaLocalMenu/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Nome 1º Jogador:"
 horizontal_alignment = 1
@@ -51,6 +52,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Label2" type="Label" parent="PartidaLocalMenu/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Nome 2º Jogador:"
 horizontal_alignment = 1
@@ -63,6 +65,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="StartGameLocal" type="Button" parent="PartidaLocalMenu/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("1_d6qvh")
