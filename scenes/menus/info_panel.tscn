@@ -1,9 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://csgr7vd17feoo"]
+[gd_scene load_steps=4 format=3 uid="uid://csgr7vd17feoo"]
 
 [ext_resource type="Script" uid="uid://ifdbvwii0gix" path="res://scripts/menus/info_panel.gd" id="1_umelf"]
-[ext_resource type="PackedScene" uid="uid://cn4lnepleltox" path="res://scenes/markers/circle.tscn" id="2_06pow"]
 [ext_resource type="PackedScene" uid="uid://dqvuj160i4a2v" path="res://scenes/menus/regras.tscn" id="3_2yl5t"]
-[ext_resource type="PackedScene" uid="uid://c7onln7jqs58j" path="res://scenes/markers/cross.tscn" id="3_jmxqj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tlq4f"]
 bg_color = Color(1, 1, 1, 1)
@@ -17,38 +15,53 @@ corner_radius_top_right = 16
 corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 
-[node name="InfoPanel" type="Control"]
-layout_mode = 3
+[node name="InfoPanel" type="CanvasLayer"]
+script = ExtResource("1_umelf")
+regras_scene = ExtResource("3_2yl5t")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(0, 60)
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-script = ExtResource("1_umelf")
-regras_scene = ExtResource("3_2yl5t")
-circle_scene = ExtResource("2_06pow")
-cross_scene = ExtResource("3_jmxqj")
+theme_override_constants/separation = 30
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 150.0
-grow_horizontal = 2
-alignment = 1
-
-[node name="Space" type="Control" parent="HBoxContainer2"]
+[node name="Control" type="Control" parent="ColorRect/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
 
-[node name="RegrasButton" type="Button" parent="HBoxContainer2"]
+[node name="RegrasButton" type="Button" parent="ColorRect/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_type_variation = &"Button_Menus"
 theme_override_font_sizes/font_size = 32
 text = "tr(\"RULES\")"
+
+[node name="ReturnButton" type="Button" parent="ColorRect/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_type_variation = &"Button_Menus"
+theme_override_font_sizes/font_size = 32
+text = "tr(\"INITIAL_PAGE_BUTTON\")"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+offset_top = 72.0
+offset_right = 720.0
+offset_bottom = 177.0
+grow_horizontal = 2
+alignment = 1
 
 [node name="Space2" type="Control" parent="HBoxContainer2"]
 layout_mode = 2
@@ -77,7 +90,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -145,4 +157,5 @@ theme_override_font_sizes/font_size = 32
 text = "0"
 horizontal_alignment = 1
 
-[connection signal="pressed" from="HBoxContainer2/RegrasButton" to="." method="_on_regras_button_pressed"]
+[connection signal="pressed" from="ColorRect/HBoxContainer/RegrasButton" to="." method="_on_regras_button_pressed"]
+[connection signal="pressed" from="ColorRect/HBoxContainer/ReturnButton" to="." method="_on_return_button_pressed"]

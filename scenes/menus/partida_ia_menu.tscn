@@ -10,7 +10,7 @@ resource_name = "DificuldadeIA1"
 
 [node name="Window" type="Window"]
 initial_position = 2
-size = Vector2i(400, 300)
+size = Vector2i(400, 400)
 script = ExtResource("1_4yd4d")
 
 [node name="PartidaIAMenu" type="Panel" parent="."]
@@ -86,6 +86,31 @@ size_flags_horizontal = 0
 button_group = SubResource("ButtonGroup_m4s5t")
 text = "Difícil"
 
+[node name="IaSolo_4" type="CheckButton" parent="PartidaIAMenu/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+button_group = SubResource("ButtonGroup_m4s5t")
+text = "Customizada"
+
+[node name="HBox_CustomDifficulty" type="HBoxContainer" parent="PartidaIAMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LabelDifficult" type="Label" parent="PartidaIAMenu/MarginContainer/VBoxContainer/HBox_CustomDifficulty"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Dificuldade da IA"
+
+[node name="LabelDifValue" type="LineEdit" parent="PartidaIAMenu/MarginContainer/VBoxContainer/HBox_CustomDifficulty"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Easy - 0
+Medium - 1
+Hard - 3"
+text = "5"
+alignment = 2
+editable = false
+
 [node name="VSpace2" type="Control" parent="PartidaIAMenu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -103,4 +128,6 @@ text = "Start Game
 [connection signal="pressed" from="PartidaIAMenu/MarginContainer/VBoxContainer/IaSolo_1" to="." method="_on_ia_solo_1_pressed"]
 [connection signal="pressed" from="PartidaIAMenu/MarginContainer/VBoxContainer/IaSolo_2" to="." method="_on_ia_solo_2_pressed"]
 [connection signal="pressed" from="PartidaIAMenu/MarginContainer/VBoxContainer/IaSolo_3" to="." method="_on_ia_solo_3_pressed"]
+[connection signal="pressed" from="PartidaIAMenu/MarginContainer/VBoxContainer/IaSolo_4" to="." method="_on_ia_solo_4_pressed"]
+[connection signal="text_changed" from="PartidaIAMenu/MarginContainer/VBoxContainer/HBox_CustomDifficulty/LabelDifValue" to="." method="_on_label_dif_value_text_changed"]
 [connection signal="pressed" from="PartidaIAMenu/MarginContainer/VBoxContainer/StartGameIA" to="." method="_on_start_game_ia_pressed"]

@@ -28,12 +28,10 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="InfoPanel" parent="Fundo" instance=ExtResource("2_shwp6")]
-layout_mode = 1
-size_flags_horizontal = 8
-size_flags_vertical = 8
 
 [node name="IA_Timer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
 
+[connection signal="return_initial" from="Fundo/InfoPanel" to="." method="_on_info_panel_return_initial"]
 [connection signal="timeout" from="IA_Timer" to="." method="_on_ia_timer_timeout"]

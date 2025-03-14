@@ -11,6 +11,8 @@ extends ColorRect
 @onready var partida_ia_2: Button = %PartidaIA2
 @onready var regras_button: Button = %RegrasButton
 @onready var option_button: OptionButton = %OptionButton
+@onready var label_marker_choose: Label = %LabelMarkerChoose
+@onready var texture_button: TextureButton = %TextureButton
 
 signal start_game
 
@@ -20,8 +22,8 @@ var idiomas = {
 }
 
 func _ready() -> void:
-	#option_button.set_item_icon(0, load("res://assets/images/en-usa.jpg"))  # Para a primeira opção
-	#option_button.set_item_icon(1, load("res://assets/images/pt-br.png"))  # Para a segunda opção
+	if Preferencias.choose_marker == -1:
+		texture_button.button_pressed = true
 	option_button.connect("item_selected", _on_idioma_selecionado)
 	_on_idioma_selecionado(0)
 	
@@ -59,3 +61,7 @@ func update_language() -> void:
 	partida_ia.text = tr("IA")
 	partida_ia_2.text = tr("IAxIA")
 	regras_button.text = tr("RULES")
+	label_marker_choose.text = tr("MARKER_CHOOSE")
+
+func _on_texture_button_toggled(toggled_on: bool) -> void:
+	Preferencias.choose_marker = -1 if toggled_on else 1

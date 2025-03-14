@@ -13,7 +13,7 @@ resource_name = "IA2_dificuldade"
 
 [node name="Window" type="Window"]
 initial_position = 2
-size = Vector2i(450, 250)
+size = Vector2i(600, 350)
 script = ExtResource("1_xh63d")
 
 [node name="PartidaIA2Menu" type="Panel" parent="."]
@@ -80,6 +80,27 @@ layout_mode = 2
 button_group = SubResource("ButtonGroup_78ukb")
 text = "Difícil"
 
+[node name="IA_4" type="CheckButton" parent="PartidaIA2Menu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+button_group = SubResource("ButtonGroup_78ukb")
+text = "Difícil"
+
+[node name="HBox_Custom" type="HBoxContainer" parent="PartidaIA2Menu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LabelIACustom" type="Label" parent="PartidaIA2Menu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBox_Custom"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Dificuldade da IA"
+
+[node name="customIA1" type="LineEdit" parent="PartidaIA2Menu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBox_Custom"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "5"
+alignment = 2
+editable = false
+
 [node name="VBoxContainer2" type="VBoxContainer" parent="PartidaIA2Menu/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -116,6 +137,27 @@ layout_mode = 2
 button_group = SubResource("ButtonGroup_hjnmx")
 text = "Difícil"
 
+[node name="IA2_4" type="CheckButton" parent="PartidaIA2Menu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+button_group = SubResource("ButtonGroup_hjnmx")
+text = "Difícil"
+
+[node name="HBox_Custom2" type="HBoxContainer" parent="PartidaIA2Menu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="LabelIACustom2" type="Label" parent="PartidaIA2Menu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBox_Custom2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Dificuldade da IA"
+
+[node name="customIA2" type="LineEdit" parent="PartidaIA2Menu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBox_Custom2"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "5"
+alignment = 2
+editable = false
+
 [node name="VSpace" type="Control" parent="PartidaIA2Menu/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -150,9 +192,13 @@ text = "Start Game"
 [connection signal="pressed" from="PartidaIA2Menu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/IA_1" to="." method="_on_ia_1_pressed"]
 [connection signal="pressed" from="PartidaIA2Menu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/IA_2" to="." method="_on_ia_2_pressed"]
 [connection signal="pressed" from="PartidaIA2Menu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/IA_3" to="." method="_on_ia_3_pressed"]
+[connection signal="pressed" from="PartidaIA2Menu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/IA_4" to="." method="_on_ia_4_pressed"]
+[connection signal="text_changed" from="PartidaIA2Menu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBox_Custom/customIA1" to="." method="_on_custom_ia_1_text_changed"]
 [connection signal="pressed" from="PartidaIA2Menu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/IA2_0" to="." method="_on_ia_2_0_pressed"]
 [connection signal="pressed" from="PartidaIA2Menu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/IA2_1" to="." method="_on_ia_2_1_pressed"]
 [connection signal="pressed" from="PartidaIA2Menu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/IA2_2" to="." method="_on_ia_2_2_pressed"]
 [connection signal="pressed" from="PartidaIA2Menu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/IA2_3" to="." method="_on_ia_2_3_pressed"]
+[connection signal="pressed" from="PartidaIA2Menu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/IA2_4" to="." method="_on_ia_2_4_pressed"]
+[connection signal="text_changed" from="PartidaIA2Menu/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBox_Custom2/customIA2" to="." method="_on_custom_ia_2_text_changed"]
 [connection signal="text_changed" from="PartidaIA2Menu/MarginContainer/VBoxContainer/HBoxContainer2/LabelNumPartidas" to="." method="_on_label_num_partidas_text_changed"]
 [connection signal="pressed" from="PartidaIA2Menu/MarginContainer/VBoxContainer/StartGameIaIa" to="." method="_on_start_game_ia_ia_pressed"]

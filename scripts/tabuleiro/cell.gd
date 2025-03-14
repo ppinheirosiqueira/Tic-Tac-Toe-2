@@ -1,8 +1,5 @@
 extends Control
 
-@export var circle_scene:PackedScene
-@export var cross_scene:PackedScene
-
 @export var show_top : bool = false
 @export var show_bottom : bool = false
 @export var show_left : bool = false
@@ -23,9 +20,9 @@ func add_marker(player:int) -> void:
 	var scene
 	marcado = player
 	if player == 1:
-		scene = circle_scene.instantiate()
+		scene = Preferencias.cenas[Preferencias.choose_marker].instantiate()
 	else:
-		scene = cross_scene.instantiate()
+		scene = Preferencias.cenas[-Preferencias.choose_marker].instantiate()
 	scene.name = "marker"
 	add_child(scene)
 

@@ -3,7 +3,7 @@ extends Node2D
 @export var game_over_scene: PackedScene
 
 @onready var tabuleiro_maior: Control = $Fundo/TabuleiroMaior
-@onready var info_panel: Control = $Fundo/InfoPanel
+@onready var info_panel: CanvasLayer = $Fundo/InfoPanel
 
 signal return_initial
 
@@ -19,7 +19,7 @@ func _ready() -> void:
 	tabuleiro_maior.connect("end_game", _on_end_game)
 	
 func configurar_jogo(name1:String, name2:String, game_type:int, dificuldadeIA:int, dificuldadeIA2:int) -> void:
-	info_panel.att_nomes(name1,name2, true if game_type==2 else false)
+	info_panel.att_nomes(name1,name2)
 	tipo_jogo = game_type
 	IA_1 = dificuldadeIA
 	IA_2 = dificuldadeIA2
@@ -69,4 +69,7 @@ func _on_game_over_menu_restart() -> void:
 
 func _on_game_over_return() -> void:
 	get_tree().paused = false
+	return_initial.emit()
+
+func _on_info_panel_return_initial() -> void:
 	return_initial.emit()
